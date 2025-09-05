@@ -24,7 +24,6 @@
 
 # Create Root CA
 <!-- 
-mkdir -p /opt/mtls/ca && cd /opt/mtls/ca
 
 # กุญแจ CA (ใส่รหัสผ่านก็ได้ แต่ต้องปลดก่อนใส่ Nginx)
 openssl genrsa -out ca.key 4096
@@ -36,7 +35,6 @@ openssl req -x509 -new -nodes -key ca.key -sha256 -days 3650 -out ca.crt \
 
 # create Server Certificate (must have SAN)
 <!-- 
-mkdir -p /opt/mtls/server && cd /opt/mtls/server
 
 # สร้าง key
 openssl genrsa -out server.key 2048
@@ -69,7 +67,6 @@ openssl x509 -in server.crt -noout -text | grep -A2 "X509v3 Subject Alternative 
 
 # create Client Certificate (with EKU: clientAuth)
 <!-- 
-mkdir -p /opt/mtls/client && cd /opt/mtls/client
 
 # key ฝั่ง client
 openssl genrsa -out client.key 2048

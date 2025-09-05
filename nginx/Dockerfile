@@ -15,7 +15,7 @@ COPY ./index.html /usr/share/nginx/html/index.html
 # COPY ./dist/ /usr/share/nginx/html/
 
 # copy ca cert, server cert, and server key
-COPY ./mtls/ca/ca.crt /etc/nginx/tls/ca.crt
+COPY ./mtls/client/ca/ca.crt /etc/nginx/tls/ca.crt
 COPY ./mtls/server/server.crt /etc/nginx/tls/server.crt
 COPY ./mtls/server/server.key /etc/nginx/tls/server.key
 RUN chmod 600 /etc/nginx/tls/server.key
